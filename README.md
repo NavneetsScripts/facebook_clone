@@ -2,9 +2,11 @@
 
 A modern, responsive Facebook clone built with HTML, CSS, and JavaScript. This project demonstrates advanced frontend development skills and modern web technologies.
 
+---
+
 ## 🌟 Live Preview
 
-[View the live site!](https://your-username.github.io/facebook_clone/)
+[View the live site!](https://navneetsscripts.github.io/facebook_clone/)
 
 ---
 
@@ -265,6 +267,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 **Note**: This is a demonstration project for portfolio purposes. It is not affiliated with Facebook/Meta and does not use any proprietary Facebook APIs or data.
+
 
 
 
