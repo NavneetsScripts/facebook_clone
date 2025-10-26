@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="logo">
+                <img src="socialbook_img/images/logo.png" alt="Facebook Logo" class="logo-img">
+                <h1>facebook</h1>
+            </div>
+            <div class="search-bar">
+                <img src="socialbook_img/images/search.png" alt="Search" class="search-icon">
+                <input type="text" placeholder="Search Facebook" id="searchInput">
+            </div>
+            <div class="header-menu">
+                <div class="menu-item active">
+                    <img src="socialbook_img/images/profile-home.png" alt="Home" class="menu-icon">
+                </div>
+                <div class="menu-item">
+                    <img src="socialbook_img/images/friends.png" alt="Friends" class="menu-icon">
+                </div>
+                <div class="menu-item">
+                    <img src="socialbook_img/images/watch.png" alt="Watch" class="menu-icon">
+                </div>
+                <div class="menu-item">
+                    <img src="socialbook_img/images/marketplace.png" alt="Marketplace" class="menu-icon">
+                </div>
+                <div class="menu-item">
+                    <img src="socialbook_img/images/group.png" alt="Groups" class="menu-icon">
+                </div>
+            </div>
+            <div class="user-menu">
+                <div class="profile-pic">
+                    <img src="socialbook_img/images/profile-pic.png" alt="Profile">
+                </div>
+                <div class="menu-icons">
+                    <img src="socialbook_img/images/notification.png" alt="Notifications" class="menu-icon" data-count="3" onclick="showNotifications()">
+                    <img src="socialbook_img/images/message.png" alt="Messages" class="menu-icon" data-count="5" onclick="showMessages()">
+                    <img src="socialbook_img/images/arrow.png" alt="Menu" class="menu-icon" onclick="toggleUserMenu()">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <!-- Left Sidebar -->
+        <aside class="left-sidebar">
+            <div class="sidebar-section">
+                <div class="sidebar-item">
+                    <img src="socialbook_img/images/profile.png" alt="Profile" class="sidebar-icon">
+                    <span>Your Profile</span>
+                </div>
+                <div class="sidebar-item">
+                    <img src="socialbook_img/images/friends.png" alt="Friends" class="sidebar-icon">
+                    <span>Friends</span>
+                </div>
+                <div class="sidebar-item">
+                    <img src="socialbook_img/images/status-1.png" alt="Memories" class="sidebar-icon">
+                    <span>Memories</span>
+                </div>
+                <div class="sidebar-item">
+                    <img src="socialbook_img/images/see-more.png" alt="Saved" class="sidebar-icon">
+                    <span>Saved</span>
+                </div>
+                <div class="sidebar-item">
+                    <img src="socialbook_img/images/status-2.png" alt="Events" class="sidebar-icon">
+                    <span>Events</span>
+                </div>
+                <div class="sidebar-item">
+                    <img src="socialbook_img/images/status-3.png" alt="Pages" class="sidebar-icon">
+                    <span>Pages</span>
+                </div>
+                <div class="sidebar-item">
+                    <img src="socialbook_img/images/marketplace.png" alt="Marketplace" class="sidebar-icon">
+                    <span>Marketplace</span>
+                </div>
+                <div class="sidebar-item">
+                    <img src="socialbook_img/images/watch.png" alt="Watch" class="sidebar-icon">
+                    <span>Watch</span>
+                </div>
+                <div class="sidebar-item">
+                    <img src="socialbook_img/images/group.png" alt="Gaming" class="sidebar-icon">
+                    <span>Gaming</span>
+                </div>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3>Your Shortcuts</h3>
+                <div class="sidebar-item">
+                    <i class="fas fa-plus"></i>
+                    <span>See More</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Feed -->
+        <main class="main-feed">
+            <!-- Create Post -->
+            <div class="create-post">
+                <div class="post-header">
+                    <img src="socialbook_img/images/profile-pic.png" alt="Profile" class="profile-img">
+                    <input type="text" placeholder="What's on your mind?" id="postInput">
+                </div>
+                <div class="post-options">
+                    <div class="post-option" onclick="openPhotoUpload()">
+                        <img src="socialbook_img/images/photo.png" alt="Photo" class="post-option-icon">
+                        <span>Photo/Video</span>
+                    </div>
+                    <div class="post-option" onclick="openLiveVideo()">
+                        <img src="socialbook_img/images/live-video.png" alt="Live Video" class="post-option-icon">
+                        <span>Live Video</span>
+                    </div>
+                    <div class="post-option" onclick="openFeelingActivity()">
+                        <img src="socialbook_img/images/feeling.png" alt="Feeling" class="post-option-icon">
+                        <span>Feeling/Activity</span>
+                    </div>
+                </div>
+                
+                <!-- Hidden file input for photo upload -->
+                <input type="file" id="photoUpload" accept="image/*,video/*" multiple style="display: none;" onchange="handlePhotoUpload(event)">
+            </div>
+
+            <!-- Posts Container -->
+            <div class="posts-container" id="postsContainer">
+                <!-- Sample Post -->
+                <div class="post">
+                    <div class="post-header">
+                        <img src="socialbook_img/images/member-1.png" alt="Profile" class="profile-img">
+                        <div class="post-info">
+                            <h4>John Doe</h4>
+                            <span>2 hours ago</span>
+                        </div>
+                        <div class="post-menu">
+                            <img src="socialbook_img/images/more.png" alt="More" class="post-menu-icon">
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <p>Just had an amazing day at the beach! The weather was perfect and I got to spend quality time with friends. Life is beautiful! 🌊☀️</p>
+                        <img src="socialbook_img/images/feed-image-1.png" alt="Post Image" class="post-image">
+                    </div>
+                    <div class="post-stats">
+                        <div class="likes">
+                            <img src="socialbook_img/images/like-blue.png" alt="Likes" class="likes-icon">
+                            <span>24</span>
+                        </div>
+                        <div class="comments-count">
+                            <span>8 comments</span>
+                        </div>
+                    </div>
+                    <div class="post-actions">
+                        <div class="reaction-buttons">
+                            <button class="action-btn like-btn" onclick="toggleReaction(this, 'like')">
+                                <img src="socialbook_img/images/like.png" alt="Like" class="action-icon">
+                                <span>Like</span>
+                            </button>
+                            <div class="reaction-menu" style="display: none;">
+                                <button class="reaction-btn" data-reaction="like" onclick="setReaction(this, 'like')">
+                                    <img src="socialbook_img/images/like-blue.png" alt="Like" class="reaction-icon">
+                                </button>
+                                <button class="reaction-btn" data-reaction="love" onclick="setReaction(this, 'love')">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <button class="reaction-btn" data-reaction="haha" onclick="setReaction(this, 'haha')">
+                                    <i class="fas fa-laugh"></i>
+                                </button>
+                                <button class="reaction-btn" data-reaction="wow" onclick="setReaction(this, 'wow')">
+                                    <i class="fas fa-surprise"></i>
+                                </button>
+                                <button class="reaction-btn" data-reaction="sad" onclick="setReaction(this, 'sad')">
+                                    <i class="fas fa-sad-tear"></i>
+                                </button>
+                                <button class="reaction-btn" data-reaction="angry" onclick="setReaction(this, 'angry')">
+                                    <i class="fas fa-angry"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <button class="action-btn comment-btn" onclick="toggleComments(this)">
+                            <img src="socialbook_img/images/comments.png" alt="Comment" class="action-icon">
+                            <span>Comment</span>
+                        </button>
+                        <button class="action-btn share-btn" onclick="sharePost(this)">
+                            <img src="socialbook_img/images/share.png" alt="Share" class="action-icon">
+                            <span>Share</span>
+                        </button>
+                    </div>
+                    <div class="comments-section" style="display: none;">
+                        <div class="comment">
+                            <img src="socialbook_img/images/member-2.png" alt="Profile" class="comment-img">
+                            <div class="comment-content">
+                                <span class="comment-author">Alice Smith</span>
+                                <span class="comment-text">Looks amazing! Wish I was there too! 😍</span>
+                            </div>
+                        </div>
+                        <div class="comment">
+                            <img src="socialbook_img/images/member-3.png" alt="Profile" class="comment-img">
+                            <div class="comment-content">
+                                <span class="comment-author">Bob Johnson</span>
+                                <span class="comment-text">Great photo! The sunset looks incredible!</span>
+                            </div>
+                        </div>
+                        <div class="add-comment">
+                            <img src="socialbook_img/images/profile-pic.png" alt="Profile" class="comment-img">
+                            <input type="text" placeholder="Write a comment..." class="comment-input">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Another Sample Post -->
+                <div class="post">
+                    <div class="post-header">
+                        <img src="socialbook_img/images/member-4.png" alt="Profile" class="profile-img">
+                        <div class="post-info">
+                            <h4>Sarah Wilson</h4>
+                            <span>5 hours ago</span>
+                        </div>
+                        <div class="post-menu">
+                            <img src="socialbook_img/images/more.png" alt="More" class="post-menu-icon">
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <p>Just finished reading an amazing book! "The Psychology of Money" by Morgan Housel. Highly recommend it to anyone interested in understanding money and investing. 📚</p>
+                        <img src="socialbook_img/images/feed-image-2.png" alt="Post Image" class="post-image">
+                    </div>
+                    <div class="post-stats">
+                        <div class="likes">
+                            <img src="socialbook_img/images/like-blue.png" alt="Likes" class="likes-icon">
+                            <span>12</span>
+                        </div>
+                        <div class="comments-count">
+                            <span>3 comments</span>
+                        </div>
+                    </div>
+                    <div class="post-actions">
+                        <div class="reaction-buttons">
+                            <button class="action-btn like-btn" onclick="toggleReaction(this, 'like')">
+                                <img src="socialbook_img/images/like.png" alt="Like" class="action-icon">
+                                <span>Like</span>
+                            </button>
+                            <div class="reaction-menu" style="display: none;">
+                                <button class="reaction-btn" data-reaction="like" onclick="setReaction(this, 'like')">
+                                    <img src="socialbook_img/images/like-blue.png" alt="Like" class="reaction-icon">
+                                </button>
+                                <button class="reaction-btn" data-reaction="love" onclick="setReaction(this, 'love')">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <button class="reaction-btn" data-reaction="haha" onclick="setReaction(this, 'haha')">
+                                    <i class="fas fa-laugh"></i>
+                                </button>
+                                <button class="reaction-btn" data-reaction="wow" onclick="setReaction(this, 'wow')">
+                                    <i class="fas fa-surprise"></i>
+                                </button>
+                                <button class="reaction-btn" data-reaction="sad" onclick="setReaction(this, 'sad')">
+                                    <i class="fas fa-sad-tear"></i>
+                                </button>
+                                <button class="reaction-btn" data-reaction="angry" onclick="setReaction(this, 'angry')">
+                                    <i class="fas fa-angry"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <button class="action-btn comment-btn" onclick="toggleComments(this)">
+                            <img src="socialbook_img/images/comments.png" alt="Comment" class="action-icon">
+                            <span>Comment</span>
+                        </button>
+                        <button class="action-btn share-btn" onclick="sharePost(this)">
+                            <img src="socialbook_img/images/share.png" alt="Share" class="action-icon">
+                            <span>Share</span>
+                        </button>
+                    </div>
+                    <div class="comments-section" style="display: none;">
+                        <div class="comment">
+                            <img src="socialbook_img/images/member-5.png" alt="Profile" class="comment-img">
+                            <div class="comment-content">
+                                <span class="comment-author">Mike Davis</span>
+                                <span class="comment-text">Thanks for the recommendation! I'll check it out.</span>
+                            </div>
+                        </div>
+                        <div class="add-comment">
+                            <img src="socialbook_img/images/profile-pic.png" alt="Profile" class="comment-img">
+                            <input type="text" placeholder="Write a comment..." class="comment-input">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Right Sidebar -->
+        <aside class="right-sidebar">
+            <div class="sidebar-section">
+                <h3>Sponsored</h3>
+                <div class="sponsored-item">
+                    <img src="socialbook_img/images/advertisement.png" alt="Ad">
+                    <div class="sponsored-content">
+                        <h4>Learn Web Development</h4>
+                        <span>example.com</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3>Birthdays</h3>
+                <div class="birthday-item">
+                    <img src="socialbook_img/images/member-6.png" alt="Profile">
+                    <div class="birthday-content">
+                        <span><strong>Bob Johnson</strong> and <strong>2 others</strong> have birthdays today.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>Contacts</h3>
+                <div class="contact-item">
+                    <img src="socialbook_img/images/member-7.png" alt="Profile">
+                    <span>Alice Smith</span>
+                    <i class="fas fa-circle" style="color: #45bd62;"></i>
+                </div>
+                <div class="contact-item">
+                    <img src="socialbook_img/images/member-8.png" alt="Profile">
+                    <span>Charlie Brown</span>
+                    <i class="fas fa-circle" style="color: #45bd62;"></i>
+                </div>
+                <div class="contact-item">
+                    <img src="socialbook_img/images/member-9.png" alt="Profile">
+                    <span>Diana Prince</span>
+                    <i class="fas fa-circle" style="color: #45bd62;"></i>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
