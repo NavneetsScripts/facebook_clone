@@ -100,7 +100,7 @@ The application is fully responsive with breakpoints at:
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/facebook-clone.git
+   git clone https://github.com/NavneetsScripts/facebook-clone.git
    cd facebook-clone
    ```
 
@@ -267,6 +267,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 **Note**: This is a demonstration project for portfolio purposes. It is not affiliated with Facebook/Meta and does not use any proprietary Facebook APIs or data.
+
 
 
 
