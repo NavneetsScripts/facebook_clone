@@ -238,8 +238,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 👨‍💻 Author
 
 **Your Name**
-- GitHub: [@yourusername](https://github.com/NavneetsScripts)
-- LinkedIn: [Your LinkedIn](https://www.linkedin.com/in/navneet-sharma-0a7a05228/)
+- GitHub: [@NavneetsScripts](https://github.com/NavneetsScripts)
+- LinkedIn: [Navneet Sharma](https://www.linkedin.com/in/navneet-sharma-0a7a05228/)
 
 ## 🙏 Acknowledgments
 
@@ -259,4 +259,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 **Note**: This is a demonstration project for portfolio purposes. It is not affiliated with Facebook/Meta and does not use any proprietary Facebook APIs or data.
+
 
