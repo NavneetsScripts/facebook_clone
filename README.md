@@ -238,9 +238,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 👨‍💻 Author
 
 **Your Name**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
-- Portfolio: [Your Portfolio](https://yourportfolio.com)
+- GitHub: [@yourusername](https://github.com/NavneetsScripts)
+- LinkedIn: [Your LinkedIn](https://www.linkedin.com/in/navneet-sharma-0a7a05228/)
 
 ## 🙏 Acknowledgments
 
@@ -255,9 +254,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Lines of Code**: ~1,200
 - **Files**: 3 (HTML, CSS, JS)
 - **Dependencies**: 0 (vanilla JavaScript)
-- **Build Time**: 0 (no build process)
 - **Bundle Size**: < 50KB
 
 ---
 
 **Note**: This is a demonstration project for portfolio purposes. It is not affiliated with Facebook/Meta and does not use any proprietary Facebook APIs or data.
+
